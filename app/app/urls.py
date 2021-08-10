@@ -24,6 +24,7 @@ urlpatterns = [
 
     path('',include(('bases.urls', 'bases'), namespace='bases')),
     path('inv/',include(('inv.urls', 'inv'), namespace='inv')),
+    path('cli/',include(('cli.urls', 'cli'), namespace='cli')),
     #path('cmp/',include(('cmp.urls', 'cmp'), namespace='cmp')),
     
     path('admin/', admin.site.urls),
