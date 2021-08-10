@@ -45,7 +45,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SCF- <sub>Django 2.2</sub> </div>
+        <div class="sidebar-brand-text mx-3">Plantilla- <sub>Django 3.2.4</sub> </div>
       </a>
 
       <!-- Divider -->
@@ -65,8 +65,9 @@
       <div class="sidebar-heading">
         Opciones de Menú {{request.path}}
       </div>
-<!--
+
       {% url 'inv:categoria_list' as cat_url %}
+<!--      
       {% url 'inv:subcategoria_list' as s_cat_url %}
       {% url 'cmp:compras_list' as cmp_url %}
 -->
@@ -81,7 +82,9 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Catálogos de Inventario</h6>
 
+            {% if perms.inv.view_categoria %}
             <a class="collapse-item {% if cat_url in request.path %} active {% endif %}" href="{{cat_url}}">Categorias</a>
+            {% endif %}
             <a class="collapse-item {% if cat_url in request.path %} active {% endif %}" href="{{cat_url}}">Producto</a>
             <a class="collapse-item {% if cat_url in request.path %} active {% endif %}" href="{{cat_url}}">Cliente</a>
             <a class="collapse-item {% if cat_url in request.path %} active {% endif %}" href="{{cat_url}}">Venta</a>
@@ -365,7 +368,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span>Copyright &copy; Your Website 2021</span>
           </div>
         </div>
       </footer>
